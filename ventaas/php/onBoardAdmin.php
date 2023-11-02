@@ -144,28 +144,44 @@
             var ventanaInformacion = window.open("", "InformacionDetallada", "width=400,height=300");
 
             // URL de la imagen de perfil (sustituye con la URL de la imagen deseada)
-            var urlImagenPerfil = ""; 
+            var urlImagenPerfil = "https://i.imgur.com/pQ6jEXn.jpg"; 
 
-            // Crear el contenido de la ventana
-            var contenidoVentana = `
-                <html>
-                <head>
-                    <title>Información Detallada</title>
-                </head>
-                <body>
-                    <h1 style="font-family: Poppins">Informacion de ${nombre}</h1>
-                    <img src="${urlImagenPerfil}" alt="Foto de perfil" width="100">
-                    <p>Asistencias: ${asistencias}</p>
-                    <p>Días totales: ${diasTotales}</p>
-                    <p>Porcentaje total: ${porcentajeTotal}</p>
-                    <!-- Puedes agregar más información aquí -->
-                </body>
-                </html>
-            `;
-            
-            // Escribir el contenido en la ventana
-            ventanaInformacion.document.write(contenidoVentana);
-            ventanaInformacion.document.close();
+            // Realiza una solicitud AJAX para obtener las fechas de asistencia
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "fechas_asistencia.php?nombre=" + nombre, true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Procesa la respuesta JSON del servidor
+                    var fechasAsistencia = JSON.parse(xhr.responseText);
+
+                    // Crear el contenido de la ventana
+                    var contenidoVentana = `
+                        <html>
+                        <head>
+                            <title>Información Detallada</title>
+                        </head>
+                        <body>
+                            <h1 style="font-family: Poppins">Informacion de ${nombre}</h1>
+                            <img src="${urlImagenPerfil}" alt="Foto de perfil" width="100">
+                            <p style="font-family: Poppins">Asistencias: ${asistencias}</p>
+                            <p style="font-family: Poppins">Días totales: ${diasTotales}</p>
+                            <p style="font-family: Poppins">Porcentaje total: ${porcentajeTotal}</p>
+                            <p style="font-family: Poppins">Fechas de asistencia:</p>
+                            <ul style="font-family: Poppins">`;
+
+                    // Agregar las fechas al contenido de la ventana
+                    fechasAsistencia.forEach(function(fecha) {
+                        contenidoVentana += `<li>${fecha}</li>`;
+                    });
+
+                    contenidoVentana += `</ul></body></html>`;
+
+                    // Escribir el contenido en la ventana
+                    ventanaInformacion.document.write(contenidoVentana);
+                    ventanaInformacion.document.close();
+                }
+            };
+            xhr.send();
         }
 
     </script>

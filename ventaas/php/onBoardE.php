@@ -142,7 +142,7 @@
             var ventanaInformacion = window.open("", "InformacionDetallada", "width=400,height=300");
 
             // URL de la imagen de perfil (sustituye con la URL de la imagen deseada)
-            var urlImagenPerfil = ""; 
+            var urlImagenPerfil = "https://i.imgur.com/pQ6jEXn.jpg"; 
 
             // Crear el contenido de la ventana
             var contenidoVentana = `
@@ -153,9 +153,9 @@
                 <body>
                     <h1 style="font-family: Poppins">Información de ${nombre}</h1>
                     <img src="${urlImagenPerfil}" alt="Foto de perfil" width="100">
-                    <p>Asistencias: ${asistencias}</p>
-                    <p>Días totales: ${diasTotales}</p>
-                    <p>Porcentaje total: ${porcentajeTotal}</p>
+                    <p style="font-family: Poppins">Asistencias: ${asistencias}</p>
+                    <p style="font-family: Poppins">Días totales: ${diasTotales}</p>
+                    <p style="font-family: Poppins">Porcentaje total: ${porcentajeTotal}</p>
                     <!-- Puedes agregar más información aquí -->
                 </body>
                 </html>
