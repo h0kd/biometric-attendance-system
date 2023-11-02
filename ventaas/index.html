@@ -1,6 +1,3 @@
-<!-- <?php
-
-?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,26 +13,19 @@
             <div>
                 <h1 id="loginText">Login</h1>
             </div>
-            <div>
-                <input type="text" placeholder="Username" id="userInput">
-            </div>
-            <div>
-                <input type="password" placeholder="Password" id="pwdInput">
-            </div>
-            <div>
-                <label for="forgot" id="forgotLabel">Forgot Password?</label>
-            </div>
-            <button id="loginBtn" onclick="redirigir()">LOGIN</button>
+            <form action="php/login.php" method="post">
+                <div>
+                    <input type="text" placeholder="Username" id="userInput" name="email">
+                </div>
+                <div>
+                    <input type="password" placeholder="Password" id="pwdInput" name="password">
+                </div>
+                <div>
+                    <label for="forgot" id="forgotLabel">Forgot Password?</label>
+                </div>
+                <button type="submit" id="loginBtn">LOGIN</button>
+            </form>
         </div>
     </div>
-
-    <script>
-        // Función para redirigir a otra página
-        function redirigir() {
-            // Reemplaza "URL_de_tu_pagina.html" con la URL de la página a la que deseas redirigir
-            window.location.href = "php/onBoardAdmin.php";
-        }
-    </script>
 </body>
 </html>
-
