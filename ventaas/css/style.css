@@ -1,0 +1,160 @@
+
+.bodyContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#loginContainer {
+    text-align: center;
+}
+
+#loginText {
+    position: relative;
+    left: 400px; /* Mueve hacia la derecha */
+    top: -150px; /* Mueve hacia arriba */
+    font-family: "Poppins";
+    font-weight: bold;
+}
+
+#userInput {
+    position: relative;
+    left: 400px; /* Mueve hacia la derecha */
+    top: -80px; /* Mueve hacia arriba */
+    font-family: "Poppins";
+}
+
+#pwdInput {
+    position: relative;
+    left: 400px; /* Mueve hacia la derecha */
+    top: -50px; /* Mueve hacia arriba */
+    font-family: "Poppins";
+}
+
+#forgotLabel {
+    position: relative;
+    left: 368px; /* Mueve hacia la derecha */
+    top: -30px; /* Mueve hacia arriba */
+    font-family: "Poppins";
+    font-style: italic;
+}
+
+#loginBtn {
+    position: relative;
+    left: 400px; /* Mueve hacia la derecha */
+    top: -10px; /* Mueve hacia arriba */
+
+    background-color: #154466; /* Color de fondo */
+    border: none; /* Elimina el borde */
+    border-radius: 20px !important; /* Elimina las esquinas redondeadas */
+    padding: 10px 80px; /* Ajusta el tamaño del botón */
+    color: white; /* Color del texto */
+    font-family: "Poppins";
+    font-weight: bold;
+}
+
+#mainImage{
+    width: 900px;
+    height: 900px;
+    position: relative;
+    left: -600px;
+    top: 0px;
+}
+
+#h1Tabla {
+    font-family: 'Poppins';
+}
+
+.tabla-personalizada {
+    font-family: 'Poppins';
+}
+
+/* Aplica la clase a la tabla */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+/* Aplica la clase a todas las celdas de la tabla */
+.tabla-personalizada td,
+.tabla-personalizada th {
+    font-family: 'Poppins';
+}
+
+
+/* Estilos para los botones */
+.buttonsTable {
+    background-color: #007bff; /* Color de fondo azul */
+    color: #fff; /* Color del texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 20px;
+    padding: 10px 20px; /* Relleno interno */
+    margin-top: 20px; /* Margen derecho para separar los botones */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    font-family: 'Poppins';
+}
+
+#btnsTable2{
+    border: none; /* Sin borde */
+    border-radius: 20px;
+    padding: 10px 20px; /* Relleno interno */
+    margin-top: 20px; /* Margen derecho para separar los botones */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    font-family: 'Poppins';
+}
+
+/* Estilos para los botones cuando se pasan por encima */
+.buttonsTable:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar por encima */
+}
+
+/* Estilo adicional para el botón "Agregar" si lo deseas */
+#btnAdd {
+    background-color: #28a745; /* Color de fondo verde para el botón "Agregar" */
+}
+
+/* Estilo adicional para el botón "Refrescar" si lo deseas */
+#btnRefresh {
+    background-color: #dc3545; /* Color de fondo rojo para el botón "Refrescar" */
+}
+
+/* Estilos para el botón de eliminación */
+.boton-eliminar {
+    background-color: #dc3545; /* Color de fondo rojo */
+    color: #fff; /* Color del texto blanco */
+    border: none; /* Sin borde */
+    padding: 5px 10px; /* Relleno interno */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 20px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.containerBanner{
+    width: 100%;
+    height: 25vh;
+}
+.banner{
+    width: 100%;
+    height: 20vh;
+    background-image: url(../assets/imgBanner.jpg);
+    background-size: cover;
+    background-color: #FFFFFF;	
+    position: relative;	
+    box-shadow: 0px 8px 5px 0px #303030;
+}
+
+#logoUsm{
+    width: 20vh;
+    height: 20vh;
+    padding-left: 10px;
+}
