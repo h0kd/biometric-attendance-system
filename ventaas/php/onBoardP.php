@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tabla Profe</title>
+    <title>Tabla con Botón de Eliminar</title>
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -62,7 +62,7 @@
 
     <a href="excel.php" id="btnsTable2" class="btn btn-primary float-end">Generar informe</a>
     
-    <a href="addStudent.php" id="btnsTable2" class="btn btn-primary float-end">Agregar estudiante</a>
+    <a href="addClase.php" id="btnsTable2" class="btn btn-primary float-end">Iniciar Clase</a>
 
     <script>
         // Función para agregar una fila a la tabla
@@ -144,7 +144,7 @@
             var ventanaInformacion = window.open("", "InformacionDetallada", "width=400,height=300");
 
             // URL de la imagen de perfil (sustituye con la URL de la imagen deseada)
-            var urlImagenPerfil = "https://i.imgur.com/pQ6jEXn.jpg"; 
+            var urlImagenPerfil = ""; 
 
             // Crear el contenido de la ventana
             var contenidoVentana = `
@@ -153,11 +153,11 @@
                     <title>Información Detallada</title>
                 </head>
                 <body>
-                    <h1 style="font-family: Poppins">Información de ${nombre}</h1>
+                    <h1>Información de ${nombre}</h1>
                     <img src="${urlImagenPerfil}" alt="Foto de perfil" width="100">
-                    <p style="font-family: Poppins">Asistencias: ${asistencias}</p>
-                    <p style="font-family: Poppins">Días totales: ${diasTotales}</p>
-                    <p style="font-family: Poppins">Porcentaje total: ${porcentajeTotal}</p>
+                    <p>Asistencias: ${asistencias}</p>
+                    <p>Días totales: ${diasTotales}</p>
+                    <p>Porcentaje total: ${porcentajeTotal}</p>
                     <!-- Puedes agregar más información aquí -->
                 </body>
                 </html>
