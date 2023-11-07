@@ -1,46 +1,60 @@
 <?php
-session_start();
+require 'dbcon.php'; 
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $nombre = $_POST['nombre'];
+    $correo = $_POST['correo'];
+    $contrasena = $_POST['contrasena'];
+    $rut = $_POST['rut'];
+    $huella_dactilar = $_POST['huella_dactilar'];
+
+    $sqlUsuario = "INSERT INTO usuario (tipo_usuario, nombre, correo, contrasena) VALUES ('estudiante', '$nombre', '$correo', '$contrasena')";
+    if ($con->query($sqlUsuario) === TRUE) {
+        $usuario_id = $con->insert_id;
+
+        $sqlEstudiante = "INSERT INTO estudiante (rut, huella_dactilar, usuario_id) VALUES ('$rut', $huella_dactilar, $usuario_id)";
+        if ($con->query($sqlEstudiante) === TRUE) {
+            echo "Estudiante agregado exitosamente.";
+        } else {
+            echo "Error al agregar el estudiante: " . $con->error;
+        }
+    } else {
+        echo "Error al agregar el usuario: " . $con->error;
+    }
+
+    $con->close();
+}
 ?>
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Inserción de Estudiante</title>
+    <link rel="stylesheet" href="../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Agregar estudiante</title>
 </head>
 <body>
-    <div class="container mt-5">
-        <?php include('mensaje.php'); ?>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Agregar estudiante
-                            <a href="onBoardAdmin.php" class="btn btn-danger float-end">Volver</a>
-                        </h4>
-                    </div>
-                    <div class="card-body">
-                        <form action="code.php" method="POST">
+    <h2 id="h2Add">Agregar Estudiante</h2>
+    <form action="" method="post" id="formAdd">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre"><br><br>
+        <label for="correo">Correo:</label><br>
+        <input type="text" id="correo" name="correo"><br><br>
+        <label for="contrasena">Contraseña:</label><br>
+        <input type="password" id="contrasena" name="contrasena"><br><br>
+        <label for="rut">RUT:</label><br>
+        <input type="text" id="rut" name="rut"><br><br>
+        <label for="huella_dactilar">Huella Dactilar:</label><br>
+        <input type="number" id="huella_dactilar" name="huella_dactilar"><br><br>
+        <input type="submit" value="Agregar Estudiante" class="btn btn-success">
+    </form>
+    <button id="regresarBtnForm" class="btn btn-danger">Regresar</button>
 
-                            <div class="mb-3">
-                                <label>Nombre</label>
-                                <input type="text" name="nombre" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label>Asistencias</label>
-                                <input type="text" name="asistencia" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <button type="submit" name="add_student" class="btn btn-primary">Agregar</button>
-                            </div>
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Función para regresar a la página anterior
+        document.getElementById('regresarBtnForm').addEventListener('click', function() {
+            history.back();
+        });
+    </script>
 </body>
 </html>

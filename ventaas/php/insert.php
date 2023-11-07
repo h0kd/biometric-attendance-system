@@ -1,38 +1,73 @@
 <?php
-header('Content-Type: application/json');
-
+require 'dbcon.php';
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Recupera los datos del formulario
-    $nombre = $_POST["nombre"];
-    $asistencias = $_POST["asistencias"];
-    $diasTotales = $_POST["diasTotales"];
-    $porcentajeTotal = $_POST["porcentajeTotal"];
 
-    // Realiza la inserción en la base de datos
-    $conn = mysqli_connect("localhost", "root", "", "deinacridadb");
-    if ($conn -> connect_error) {
-        die("Conexion fallida:". $conn -> connect_error);
+    if ($con->connect_error) {
+        die("Conexión fallida: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO estudiante (nombre, asistencias, dias_totales, porcentaje_total) VALUES ('$nombre', $asistencias, $diasTotales, $porcentajeTotal)";
-    $result = $conn -> query($sql);
+    $fecha = $_POST['fecha'];
+    $clase_id = $_POST['clase_id'];
+    $estudiante_rut = $_POST['estudiante_rut'];
+    $asistencia = $_POST['asistencia'];
+    $atraso = $_POST['atraso'];
 
-    if ($result) {
-        // Recupera el último ID insertado
-        $estudianteID = mysqli_insert_id($conn);
+    if (date_create($fecha) === false) {
+        echo "Error: El formato de fecha no es válido.";
+        $con->close();
+        exit;
+    }
 
-        // Recupera los datos recién insertados para enviarlos al cliente
-        $sql2 = "SELECT * FROM estudiante WHERE id = $estudianteID";
-        $result2 = $conn -> query($sql2);
-        $nuevoEstudiante = $result2 -> fetch_assoc();
+    $estudianteCheckQuery = "SELECT rut FROM estudiante WHERE rut = '$estudiante_rut'";
+    $result = $con->query($estudianteCheckQuery);
 
-        // Devuelve los datos como respuesta JSON
-        echo json_encode($nuevoEstudiante);
+    if ($result->num_rows === 0) {
+        echo "Error: El estudiante con el RUT proporcionado no existe en la base de datos.";
+        $con->close();
+        exit;
+    }
+
+    $sql = "INSERT INTO asistencia (fecha, clase_id, estudiante_rut, asistencia, atraso) VALUES ('$fecha','$clase_id', '$estudiante_rut', '$asistencia', '$atraso')";
+
+    if ($con->query($sql) === TRUE) {
+        echo "Nueva asistencia insertada con éxito.";
     } else {
-        // Manejo de errores, si es necesario
-        echo json_encode(array("error" => "Ocurrió un error en la inserción"));
+        echo "Error: " . $sql . "<br>" . $con->error;
     }
 
-    $conn -> close();
+    $con->close();
 }
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Inserción de Asistencia</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <form action="" method="post" id="formInsert">
+        <label for="fecha">Fecha y Hora (Formato: YYYY-MM-DD HH:MM:SS):</label><br>
+        <input type="text" id="fecha" name="fecha"><br><br>
+        <label for="clase_id">ID clase:</label><br>
+        <input type="text" id="clase_id" name="clase_id"><br><br>
+        <label for="estudiante_rut">RUT del Estudiante:</label><br>
+        <input type="text" id="estudiante_rut" name="estudiante_rut"><br><br>
+        <label for="asistencia">Asistencia (1 para presente, 0 para ausente):</label><br>
+        <input type="text" id="asistencia" name="asistencia"><br><br>
+        <label for="atraso">Atraso (1 para atraso, 0 para puntualidad):</label><br>
+        <input type="text" id="atraso" name="atraso"><br><br>
+        <input type="submit" value="Enviar" class="btn btn-success">
+        
+    </form>
+    <button id="regresarBtnForm" class="btn btn-danger">Regresar</button>
+
+    <script>
+        // Función para regresar a la página anterior
+        document.getElementById('regresarBtnForm').addEventListener('click', function() {
+            history.back();
+        });
+    </script>
+</body>
+</html>

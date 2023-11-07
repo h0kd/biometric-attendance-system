@@ -154,3 +154,26 @@ table, th, td {
     padding-left: 10px;
 }
 
+#formInsert {
+    margin-left: 20px; /* Puedes ajustar la cantidad de margen según tus preferencias */
+    margin-top: 20px;
+}
+
+#regresarBtnForm {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#formAdd {
+    margin-left: 20px; /* Puedes ajustar la cantidad de margen según tus preferencias */
+    margin-top: 20px;
+}
+
+#h2Add {
+    margin-left: 20px;
+}
+
+#formAddClase {
+    margin-left: 20px; /* Puedes ajustar la cantidad de margen según tus preferencias */
+    margin-top: 20px;
+}

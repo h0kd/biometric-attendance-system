@@ -9,7 +9,7 @@
     <div class="containerBanner">
         <div class="banner">
             <div class="banner-text">
-                <a href="onBoardAdminV2.php"><img id="logoUsm" src="../assets/logoUsm.png"></a>
+                <a href="onBoardE.php"><img id="logoUsm" src="../assets/logoUsm.png"></a>
             </div>
         </div>
     </div>
@@ -17,7 +17,7 @@
     <table border="1" class="tabla-personalizada">
         <thead>
             <tr>
-                <th>Clase</th>
+                <th>clase</th>
                 <th>Fecha y hora</th>
                 <th>Atrasos</th>
             </tr>
@@ -49,7 +49,14 @@
     <br>
 
     <a href="excelE.php?rut=<?php echo $_GET['rut']; ?>" id="btnsTable2" class="btn btn-primary float-end">Generar informe</a>
-
+    <button id="regresarBtn" class="btn btn-danger">Regresar</button>
+    
+    <script>
+        // Función para regresar a la página anterior
+        document.getElementById('regresarBtn').addEventListener('click', function() {
+            history.back();
+        });
+    </script>
 
 </body>
 </html>

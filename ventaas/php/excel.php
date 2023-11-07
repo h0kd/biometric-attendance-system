@@ -40,7 +40,3 @@ while ($estudiante = $result->fetch_assoc()) {
 }
 echo '</table>';
 ?>   
-
-<!-- agregar esto al onBoardAdminV2.php
-<button id="btnAdd" class="buttonsTable" onclick="agregarFila()">Agregar</button>
-<a href="excel.php" id="btnsTable2" class="btn btn-primary float-end">Generar informe</a> -->
