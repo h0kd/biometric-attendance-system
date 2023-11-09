@@ -223,6 +223,13 @@ table, th, td {
 }
 
 .table-container {
-    max-width: 60%; /* Establece el ancho máximo que desees */
+    max-width: 80%; /* Establece el ancho máximo que desees */
     overflow-y: auto; /* Agrega desbordamiento vertical para hacer scroll si es necesario */
 }
+
+.buttons-container {
+    width: 200px;
+    margin-left: 1200px; /* Mueve los botones al lado derecho */
+    margin-top: 0 !important; /* Ajusta el margen superior según tus necesidades */
+}
+

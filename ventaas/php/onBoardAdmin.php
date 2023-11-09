@@ -71,9 +71,10 @@
                         }
                         $con -> close();
                     ?>
-                    
+
                 </tbody>
             </table>
+            
         </div>
     </div>
 
