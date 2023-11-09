@@ -71,6 +71,10 @@
     font-family: 'Poppins';
 }
 
+#tabla-personalizada {
+    font-family: 'Poppins';
+}
+
 /* Aplica la clase a la tabla */
 table {
     border-collapse: collapse;
@@ -84,6 +88,11 @@ table, th, td {
 /* Aplica la clase a todas las celdas de la tabla */
 .tabla-personalizada td,
 .tabla-personalizada th {
+    font-family: 'Poppins';
+}
+
+#tabla-personalizada td,
+#tabla-personalizada th {
     font-family: 'Poppins';
 }
 
@@ -176,4 +185,44 @@ table, th, td {
 #formAddClase {
     margin-left: 20px; /* Puedes ajustar la cantidad de margen según tus preferencias */
     margin-top: 20px;
+}
+
+.container {
+    display: flex;
+}
+
+.table-container {
+    flex: 1;
+    overflow-y: auto; /* Agrega desbordamiento vertical para hacer scroll */
+}
+
+.buttons-container {
+    width: 200px; /* O ajusta el ancho según tus necesidades */
+    margin-left: 20px; /* Puedes ajustar el margen según tus preferencias */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos a los extremos del contenedor */
+    padding: 20px; /* Añade un poco de espacio entre los elementos y los bordes del contenedor principal */
+}
+
+.table-container {
+    max-width: 600px; /* Establece el ancho máximo que desees */
+}
+
+.buttons-container {
+    width: 200px;
+    margin-left: auto; /* Mueve los botones al lado derecho */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.table-container {
+    max-width: 60%; /* Establece el ancho máximo que desees */
+    overflow-y: auto; /* Agrega desbordamiento vertical para hacer scroll si es necesario */
 }

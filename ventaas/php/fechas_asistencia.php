@@ -27,4 +27,3 @@ function obtenerFechasDeAsistencia($con, $nombre) {
     }
     return $fechasAsistencia;
 }
-}
