@@ -218,8 +218,8 @@ table, th, td {
 
 .container {
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    justify-content: start;
+    margin: 0 !important;
 }
 
 .table-container {
