@@ -1,6 +1,6 @@
 <?php
 
-$con = mysqli_connect("localhost","root","1234","deinacridadb");
+$con = mysqli_connect("localhost","root","","deinacridadb");
 
 if(!$con){
     die('Conexion fallida'. mysqli_connect_error());

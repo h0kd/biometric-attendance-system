@@ -25,7 +25,8 @@
                         <th>Nombre</th>
                         <th>Asistencias</th>
                         <th>Días totales</th>
-                        <th>Porcentaje total</th>
+                        <th>Porcentaje asistencia</th>
+                        <th>Ingresar asistencia</th>
                     </tr>
                 </thead>
                 <tbody id="tablaBody">
@@ -62,7 +63,7 @@
                                 $clase = mysqli_fetch_array($result4)[0];
                             
                                 $porcentaje = round(($asistencia / $clase) * 100, 2);
-                                echo "<tr><td><a href='onBoardE.php?rut=$rut'abrirVentanaInformacion(\"$usuario\", $asistencia, $clase, $porcentaje)'>$usuario</a></td><td>$asistencia</td><td>$clase</td><td>$porcentaje%</td><td></td></tr>";
+                                echo "<tr><td><a href='onBoardE.php?rut=$rut'>$usuario</a></td><td>$asistencia</td><td>$clase</td><td>$porcentaje%</td><td><a href='insert.php?rut=$rut'>Ingresar asistencia</a></td></tr>";
                             }                    
                             echo "</table";
                         } else {
@@ -81,7 +82,6 @@
     <div class="buttons-container">
         <a href="excel.php" id="btnsTable2" class="btn btn-success float-end">Generar informe</a>
         <a href="addStudent.php" id="btnsTable2" class="btn btn-primary">Agregar estudiante</a>
-        <a href="insert.php" id="btnsTable2" class="btn btn-primary">Ingresar asistencia</a>
     </div>
     
 </body>
