@@ -64,12 +64,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             document.getElementById('estudiante_rut').value = "<?php echo $rut; ?>";
         </script>
     </form>
-    <button id="regresarBtnForm" class="btn btn-danger">Regresar</button>
+    <button id="regresarBtnForm" class="btn btn-danger" >Regresar</button>
 
     <script>
-        // Función para regresar a la página anterior
+        // Función para redirigir a onBoardAdmin.php
         document.getElementById('regresarBtnForm').addEventListener('click', function() {
-            history.back();
+            window.location.href = 'onBoardAdmin.php';
         });
     </script>
 </body>

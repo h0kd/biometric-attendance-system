@@ -51,9 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <button id="regresarBtnForm" class="btn btn-danger">Regresar</button>
 
     <script>
-        // Función para regresar a la página anterior
+        // Función para redirigir a onBoardAdmin.php
         document.getElementById('regresarBtnForm').addEventListener('click', function() {
-            history.back();
+            window.location.href = 'onBoardAdmin.php';
         });
     </script>
 </body>
