@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "La hora no es válida.";
     }
 
-    $sql = "INSERT INTO clase (profesor_rut, sala, fecha, horario_inicio, horario_fin, semestre) VALUES ('$profesor_rut', '$sala', '$fecha','$horario_inicio', '$horario_fin', '$semestre')";
+    $sql = "INSERT INTO clase (profesor_rut, sala, fecha, horario_inicio, horario_fin, semestre, iniciada) VALUES ('$profesor_rut', '$sala', '$fecha','$horario_inicio', '$horario_fin', '$semestre', 0)";
 
     if ($con->query($sql) === TRUE) {
         echo "Nueva clase creada con éxito.";
@@ -55,6 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $con->close();
 }
+$rut2 = $_GET['rut'];
 ?>
 
 <!DOCTYPE html>
@@ -91,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <script>
         // Función para redirigir a onBoardAdmin.php
         document.getElementById('regresarBtnForm').addEventListener('click', function() {
-            window.location.href = 'onBoardP.php';
+            window.location.href = 'onBoardP.php?rut=<?php echo $rut2; ?>';
         });
     </script>
 </body>

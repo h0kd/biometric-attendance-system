@@ -127,7 +127,7 @@
         </div>
         <br>
     <a href="excel.php" id="btnsTable2" class="btn btn-primary float-end">Generar informe</a>
-    <a href="addClase.php?rut=<?php echo $_GET['rut']; ?>" id="btnsTable2" class="btn btn-primary float-end">Iniciar Clase</a>
+    <a href="addClase.php?rut=<?php echo $_GET['rut']; ?>" id="btnsTable2" class="btn btn-primary float-end">Agregar clase</a>
 
 
 </body>
