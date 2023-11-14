@@ -14,7 +14,6 @@
         </div>
     </div>
     <div class="container">
-        
         <div class="table-container">
             <h1 id="h1Tabla">Tabla de Busqueda</h1>
             <table border="1" class="tabla-personalizada">
@@ -69,16 +68,71 @@
                         }
                         $con -> close();
                     ?>
-
                 </tbody>
-            </table>
         </div>
+        
     </div>
     <br>
+        <div class="table-container">
+            <h1 id="h1Tabla">Tabla Clases</h1>
+            <table border="1" class="tabla-personalizada">
+                <thead>
+                    <tr>
+                        <th>ID clase</th>
+                        <th>Sala</th>
+                        <th>fecha</th>
+                        <th>horario inicio</th>
+                        <th>horario fin</th>
+                        <th>iniciada</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaBody">
+                    <?php
+                    require 'dbcon.php';
+                    $rut2 = $_GET['rut'];
+                    $sql = "SELECT * FROM clase WHERE profesor_rut = '$rut2'";
+                    $result = $con->query($sql);
+                    if ($result->num_rows > 0) {
+                      
+                        while ($clase = $result->fetch_assoc()) {
+                            $id = $clase['id'];
+                            $iniciada = $clase['iniciada'];
+                            $disableButton = $iniciada ? 'disabled' : '';
 
+                            echo "<tr>
+                                    <td>$id</td>
+                                    <td>{$clase['sala']}</td>
+                                    <td>{$clase['fecha']}</td>
+                                    <td>{$clase['horario_inicio']}</td>
+                                    <td>{$clase['horario_fin']}</td>
+                                    <td>{$clase['iniciada']}</td>
+                                    <td><button $disableButton onclick='iniciarClase($id, \"$rut2\")'>Iniciar Clase</button></td>
+                                </tr>";
+                        }
+                        echo "</table>";
+                    } else {
+                        echo "0 resultados";
+                    }
+                        $con -> close();
+                    ?>
+                    
+                    <script>
+                    function iniciarClase(id, rut) {
+                        if (confirm('¿Está seguro de iniciar esta clase?')) {
+                            window.location.href = 'iniciarClase.php?id=' + id + '&rut=' + rut;
+                        }
+                    }
+                    </script>
+                </tbody>
+        </div>
+        <br>
     <a href="excel.php" id="btnsTable2" class="btn btn-primary float-end">Generar informe</a>
     <a href="addClase.php?rut=<?php echo $_GET['rut']; ?>" id="btnsTable2" class="btn btn-primary float-end">Iniciar Clase</a>
 
 
 </body>
 </html>
+
+
+                      
+                    
