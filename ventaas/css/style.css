@@ -118,6 +118,15 @@ table, th, td {
     font-family: 'Poppins';
 }
 
+#regresarBtnForm{
+    border: none; /* Sin borde */
+    border-radius: 20px;
+    padding: 10px 20px; /* Relleno interno */
+    margin-top: 20px; /* Margen derecho para separar los botones */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    font-family: 'Poppins';
+}
+
 /* Estilos para los botones cuando se pasan por encima */
 .buttonsTable:hover {
     background-color: #0056b3; /* Cambia el color de fondo al pasar por encima */
@@ -196,11 +205,6 @@ table, th, td {
     overflow-y: auto; /* Agrega desbordamiento vertical para hacer scroll */
 }
 
-.buttons-container {
-    width: 200px; /* O ajusta el ancho según tus necesidades */
-    margin-left: 20px; /* Puedes ajustar el margen según tus preferencias */
-}
-
 .container {
     display: flex;
     justify-content: space-between; /* Alinea los elementos a los extremos del contenedor */
@@ -211,10 +215,6 @@ table, th, td {
     max-width: 600px; /* Establece el ancho máximo que desees */
 }
 
-.buttons-container {
-    width: 200px;
-    margin-left: auto; /* Mueve los botones al lado derecho */
-}
 
 .container {
     display: flex;
@@ -229,7 +229,7 @@ table, th, td {
 
 .buttons-container {
     width: 200px;
-    margin-left: 1200px; /* Mueve los botones al lado derecho */
+    margin: 0 !important; /* Mueve los botones al lado derecho */
     margin-top: 0 !important; /* Ajusta el margen superior según tus necesidades */
 }
 
