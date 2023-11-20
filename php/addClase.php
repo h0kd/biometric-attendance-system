@@ -66,6 +66,15 @@ $rut2 = $_GET['rut'];
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <div class="containerBanner">
+        <div class="banner">
+            <div class="banner-text">
+                <a href="onBoardAdmin.php"><img id="logoUsm" src="../assets/logoUsm.png"></a>
+            </div>
+        </div>
+    </div>
+    
+
     <?php
     $rut2 = $_GET['rut'];
     ?>
@@ -85,7 +94,7 @@ $rut2 = $_GET['rut'];
         <script>
             document.getElementById('profesor_rut').value = "<?php echo $rut2; ?>";
         </script>
-        <input type="submit" value="Enviar" class="btn btn-success">
+        <input type="submit" value="Enviar" class="btn btn-success" id=btnsTable2>
     </form>
     <button id="regresarBtnForm" class="btn btn-danger">Regresar</button>
 

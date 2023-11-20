@@ -233,3 +233,10 @@ table, th, td {
     margin-top: 0 !important; /* Ajusta el margen superior según tus necesidades */
 }
 
+#formAdd label {
+  font-weight: bold;
+}
+
+#formAddClase label {
+  font-weight: bold;
+}

@@ -34,6 +34,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <div class="containerBanner">
+        <div class="banner">
+            <div class="banner-text">
+                <a href="onBoardAdmin.php"><img id="logoUsm" src="../assets/logoUsm.png"></a>
+            </div>
+        </div>
+    </div>
+
     <h2 id="h2Add">Agregar Estudiante</h2>
     <form action="" method="post" id="formAdd">
         <label for="nombre">Nombre:</label><br>
@@ -46,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <input type="text" id="rut" name="rut"><br><br>
         <label for="huella_dactilar">Huella Dactilar:</label><br>
         <input type="number" id="huella_dactilar" name="huella_dactilar"><br><br>
-        <input type="submit" value="Agregar Estudiante" class="btn btn-success">
+        <input type="submit" value="Agregar Estudiante" class="btn btn-success" id="btnsTable2">
     </form>
     <button id="regresarBtnForm" class="btn btn-danger">Regresar</button>
 
