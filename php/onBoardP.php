@@ -70,7 +70,10 @@
                     ?>
                 </tbody>
         </div>
-        
+          <div class="buttons-container">
+            <a href="excel.php" id="btnsTable2" class="btn btn-success float-end">Generar informe</a>
+            <a href="addClase.php?rut=<?php echo $_GET['rut']; ?>" id="btnsTable2" class="btn btn-primary float-end">Agregar clase</a>
+          </div>
     </div>
     <br>
         <div class="table-container">
@@ -106,7 +109,7 @@
                                     <td>{$clase['horario_inicio']}</td>
                                     <td>{$clase['horario_fin']}</td>
                                     <td>{$clase['iniciada']}</td>
-                                    <td><button $disableButton onclick='iniciarClase($id, \"$rut2\")'>Iniciar Clase</button></td>
+                                    <td><button class='btn btn-primary' $disableButton onclick='iniciarClase($id, \"$rut2\")'>Iniciar Clase</button></td>
                                 </tr>";
                         }
                         echo "</table>";
@@ -126,9 +129,6 @@
                 </tbody>
         </div>
         <br>
-    <a href="excel.php" id="btnsTable2" class="btn btn-primary float-end">Generar informe</a>
-    <a href="addClase.php?rut=<?php echo $_GET['rut']; ?>" id="btnsTable2" class="btn btn-primary float-end">Agregar clase</a>
-
 
 </body>
 </html>
