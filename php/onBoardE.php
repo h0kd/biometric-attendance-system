@@ -17,10 +17,10 @@
         
         <div class="table-container">
             <h1 id="h1Tabla">Tabla de Busqueda</h1>
-            <table border="1" class="tabla-personalizada">
+            <table border="1" id="tabla-personalizada" class"table">
                 <thead>
                     <tr>
-                        <th>clase</th>
+                        <th>Clase</th>
                         <th>Fecha y hora</th>
                         <th>Atrasos</th>
                     </tr>
@@ -50,12 +50,13 @@
                 </tbody>
             </table>
         </div>
-    </div>
-    <br>
 
-    <a href="excelE.php?rut=<?php echo $_GET['rut']; ?>" id="btnsTable2" class="btn btn-primary float-end">Generar informe</a>
-    <button id="regresarBtn" class="btn btn-danger">Regresar</button>
-    
+    <div class="buttons-container">
+      <a href="excelE.php?rut=<?php echo $_GET['rut']; ?>" id="btnsTable2" class="btn btn-success float-end">Generar informe</a>
+      <button id="regresarBtnForm" class="btn btn-danger float-end">Regresar</button>
+    </div>
+
+    </div>
     <script>
         // Función para regresar a la página anterior
         document.getElementById('regresarBtn').addEventListener('click', function() {
