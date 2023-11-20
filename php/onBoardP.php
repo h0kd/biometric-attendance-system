@@ -73,8 +73,16 @@
           <div class="buttons-container">
             <a href="excel.php" id="btnsTable2" class="btn btn-success float-end">Generar informe</a>
             <a href="addClase.php?rut=<?php echo $_GET['rut']; ?>" id="btnsTable2" class="btn btn-primary float-end">Agregar clase</a>
+            <button id="regresarBtnForm" class="btn btn-danger float-end">Regresar</button>
+        </div>
           </div>
     </div>
+    <script>
+        // Función para regresar a la página anterior
+        document.getElementById('regresarBtnForm').addEventListener('click', function() {
+            window.location.href = '../index.html';
+        });
+    </script>
     <br>
         <div class="table-container">
             <h1 id="h1Tabla">Tabla Clases</h1>

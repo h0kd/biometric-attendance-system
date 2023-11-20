@@ -51,16 +51,16 @@
             </table>
         </div>
 
-    <div class="buttons-container">
-      <a href="excelE.php?rut=<?php echo $_GET['rut']; ?>" id="btnsTable2" class="btn btn-success float-end">Generar informe</a>
-      <button id="regresarBtnForm" class="btn btn-danger float-end">Regresar</button>
-    </div>
+        <div class="buttons-container">
+        <a href="excelE.php?rut=<?php echo $_GET['rut']; ?>" id="btnsTable2" class="btn btn-success float-end">Generar informe</a>
+        <button id="regresarBtnForm" class="btn btn-danger float-end">Regresar</button>
+        </div>
 
     </div>
     <script>
         // Función para regresar a la página anterior
-        document.getElementById('regresarBtn').addEventListener('click', function() {
-            history.back();
+        document.getElementById('regresarBtnForm').addEventListener('click', function() {
+            window.location.href = '../index.html';
         });
     </script>
 

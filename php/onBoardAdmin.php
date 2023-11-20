@@ -88,8 +88,9 @@
     <script>
         // Función para redirigir a onBoardAdmin.php
         document.getElementById('regresarBtnForm').addEventListener('click', function() {
-            history.back();
+            window.location.href = '../index.html';
         });
+        
     </script>
 
     <!-- Footer -->
