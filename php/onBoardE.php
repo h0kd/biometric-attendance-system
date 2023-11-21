@@ -76,8 +76,8 @@
         </div>
         <div class="box">
           <h2>SOBRE NOSOTROS</h2>
-          <p>Texto de ejemplo con mucho ejemplo para que no quede vacio xdd</p>
-          <p>Texto de ejemplo numero 2 con mucho ejemplo con el anterior xdd</p>
+          <p>Deinacrida nace como una agrupación con el objetivo de agilizar a disposición de los estudiantes y profesores para realizar sus clases.</p>
+          <p>La finalidad de nuestro trabajo es la optimización de los tiempos para aprovechar al máximo los periodos de formación académica y aportar en la formación de profesionales de distintas áreas de estudio.</p>
         </div>
         <div class="box">
           <h2>CONTACTO</h2>
