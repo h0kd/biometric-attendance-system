@@ -317,3 +317,7 @@ table, th, td {
 #formAddClase label {
   font-weight: bold;
 }
+
+#formInsert label {
+  font-weight: bold;
+}
