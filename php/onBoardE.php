@@ -61,7 +61,7 @@
     <script>
         // Función para regresar a la página anterior
         document.getElementById('regresarBtnForm').addEventListener('click', function() {
-            window.location.href = '../index.html';
+            history.back();
         });
     </script>
       <!-- Footer -->
