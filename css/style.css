@@ -189,7 +189,7 @@ table, th, td {
 #btnsTable2{
     border: none; /* Sin borde */
     border-radius: 20px;
-    padding: 10px 20px; /* Relleno interno */
+    padding: 10px 8px; /* Relleno interno */
     margin-top: 20px; /* Margen derecho para separar los botones */
     cursor: pointer; /* Cambia el cursor al pasar por encima */
     font-family: 'Poppins';

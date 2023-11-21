@@ -4,6 +4,7 @@
     <title>Tabla Estudiante</title>
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9a45125b50.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="containerBanner">
@@ -63,6 +64,35 @@
             window.location.href = '../index.html';
         });
     </script>
+      <!-- Footer -->
+    <footer class="pie-pagina">
+      <div class="grupo-1">
+        <div class="box">
+          <figure>
+            <a href="#">
+              <img src="../assets/deinacrida.png" alt="Logo del footer">
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <h2>SOBRE NOSOTROS</h2>
+          <p>Texto de ejemplo con mucho ejemplo para que no quede vacio xdd</p>
+          <p>Texto de ejemplo numero 2 con mucho ejemplo con el anterior xdd</p>
+        </div>
+        <div class="box">
+          <h2>CONTACTO</h2>
+          <div class="red-social">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-youtube"></a>
+          </div>
+        </div>
+      </div>
+      <div class="grupo-2">
+        <small>&copy; 2023 <b>Deinacrida</b> - Todos los Derechos Reservados.</small>
+      </div>
+    </footer>
 
 </body>
 </html>
