@@ -79,7 +79,7 @@
             
         </div>
         <div class="buttons-container">
-          <a href="addStudent.php" id="btnsTable2" class="btn btn-primary float-end">Agregar estudiante</a>
+          <a href="addUsuario.php" id="btnsTable2" class="btn btn-primary float-end">Agregar Usuario</a>
           <a href="excel.php" id="btnsTable2" class="btn btn-success float-end">Generar informe</a>
           <a href="instructivo.php" id="btnsTable2" class="btn btn-success float-end">Descargar instructivo</a>
           <button id="regresarBtnForm" class="btn btn-danger float-end">Regresar</button>
